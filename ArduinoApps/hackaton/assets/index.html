@@ -1,0 +1,59 @@
+<!--
+SPDX-FileCopyrightText: Copyright (C) Arduino s.r.l. and/or its affiliated companies
+
+SPDX-License-Identifier: MPL-2.0
+-->
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LEDs del robot</title>
+    <link rel="icon" type="image/png" href="./img/favicon.png" />
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div>
+      <div class="header">
+        <h1 class="arduino-text">LEDs del robot</h1>
+      </div>
+
+      <div class="container">
+        <!-- Dibujo de los dos LEDs de la placa -->
+        <div class="leds">
+          <div class="led rojo" id="led-rojo">
+            <div class="bombilla"></div>
+            Rojo
+          </div>
+          <div class="led verde" id="led-verde">
+            <div class="bombilla"></div>
+            Verde 
+          </div>
+        </div>
+
+        <!-- Botones -->
+        <div class="botones">
+          <button id="b-rojo"    data-modo="rojo">Rojo</button>
+          <button id="b-verde"   data-modo="verde">Verde</button>
+          <button id="b-ambos"   data-modo="ambos">Los dos</button>
+          <button id="b-apagado" data-modo="apagado">Apagar</button>
+        </div>
+
+        <!-- Estado actual -->
+        <p id="status-text" class="status-text">LEDS APAGADOS</p>
+
+        <!-- Instruction Text -->
+        <p class="instruction-text">Pulsa un botón para controlar los LEDs de la placa 👆</p>
+
+        <!-- Error message container -->
+        <div id="error-container" class="error-message" style="display: none"></div>
+      </div>
+    </div>
+
+    <script src="libs/socket.io.min.js"></script>
+    <script src="libs/arduino.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
